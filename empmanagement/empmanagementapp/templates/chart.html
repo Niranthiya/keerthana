@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/assets/css/font-awesome.min.css">
+    <script src="/static/assets/scirpt/jquery.min.js"></script>
+    <script src="/static/assets/scirpt/popper.min.js"></script>
+    <script src="/static/assets/scirpt/bootstrap.min.js"></script>
+    {% load static %}
+    <script type="text/javascript" src="{% static 'fusioncharts/fusioncharts.js' %}"></script>
+    <script type="text/javascript" src="{% static 'fusioncharts/fusioncharts.theme.fint.js' %}"></script>
+
+
+    <title>
+        Chart
+    </title>
+    <style>
+        .topic {
+            font-size: 35px;
+            text-shadow: 3px 3px 5px gray;
+            color: black;
+            margin-top: 100px;
+            padding-left: 420px;
+        }
+        
+        .content {
+            width: 70%;
+            color: black;
+            text-shadow: 2px 2px 3px gray;
+            padding-left: 35%;
+            font-size: 20px;
+        }
+        
+        .head {
+            font-size: 35px;
+            text-shadow: 3px 3px 5px gray;
+            color: black;
+            float: left;
+        }
+    </style>
+
+</head>
+
+<body style="background-image: url(/static/assets/images/emp1.jpg)">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 head">
+                <h1><b><i>EMPLOYEE MANAGEMENT</i></b></h1>
+            </div>
+            <div class="col-md-4">
+
+                <a href="/home" data-toggle="tooltip" style="float:right;color:black" title="HOME"><i
+                        class="fa fa-home fa-lg"></i></a>
+
+            </div>
+        </div>
+        <div id="chart-1"></div>
+        {{ output|safe }}
+    </div>
+</body>
+
+</html>

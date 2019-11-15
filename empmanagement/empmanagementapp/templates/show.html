@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/assets/css/font-awesome.min.css">
+    <script src="/static/assets/scirpt/bootstrap.min.js"></script>
+    <script src="/static/assets/scirpt/jquery.min.js"></script>
+    <script src="/static/assets/scirpt/popper.min.js"></script>
+    <title>
+        Show Employee
+    </title>
+</head>
+<style>
+    .topic {
+        font-size: 35px;
+        text-shadow: 3px 3px 5px gray;
+        color: black;
+        text-align: center;
+        margin-top: 100px;
+    }
+    
+    .content {
+        text-align: center;
+    }
+    
+    .head {
+        font-size: 35px;
+        text-shadow: 3px 3px 5px gray;
+        color: black;
+        float: left;
+    }
+</style>
+
+<body style="background-image: url(/static/assets/images/emp1.jpg)">
+    <div class="container-fluid">
+        <div class="row" style="height:10px;">
+            <div class="col-md-8 head">
+                <h1><b><i>EMPLOYEE MANAGEMENT</i></b></h1>
+            </div>
+            <div class="col-md-4">
+
+                <a href="/home" data-toggle="tooltip" style="float:right;color:black;" title="Home"><i
+                        class="fa fa-home fa-lg"></i></a>
+            </div>
+
+        </div>
+        <div class="topic">
+            <h1>Show Employee Details</h1>
+        </div>
+    </div>
+
+    <div class="content">
+        <table class="table table-bordered" style="font-size: 20px;">
+            <thead>
+                <tr style="text-align:center">
+                    <th><b>Code</b></th>
+                    <th style="width:20%"><b>Name</b></th>
+                    <th style="width:30%"><b>Email</b></th>
+                    <th><b>Contact No</b></th>
+                    <th><b>Delete</b></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for emp in employee %}
+                <tr>
+                    <td>{{emp.code_no}}</td>
+                    <td><a href="/edit/{{emp.code_no}}">{{emp.name}}</a></td>
+                    <td>{{emp.email_id}}</td>
+                    <td>{{emp.contact_no}}</td>
+                    <td><a href="/delete/{{emp.code_no}}" type="submit" onclick="deletemsg()"><i class="fa fa-trash fa-md text-danger"></i></a></td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <script>
+        function deletemsg() {
+            alert("Employee Details Deleted Successfully");
+        }
+    </script>
+
+</body>
+
+</html>

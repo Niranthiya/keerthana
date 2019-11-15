@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/assets/css/font-awesome.min.css">
+    <script src="/static/assets/scirpt/jquery.min.js"></script>
+    <script src="/static/assets/scirpt/popper.min.js"></script>
+    <script src="/static/assets/scirpt/bootstrap.min.js"></script>
+
+
+
+    <title>
+        Add Employee
+    </title>
+    <style>
+        .topic {
+            font-size: 35px;
+            text-shadow: 3px 3px 5px gray;
+            color: black;
+            margin-top: 100px;
+            padding-left: 420px;
+        }
+        
+        .content {
+            width: 70%;
+            color: black;
+            text-shadow: 2px 2px 3px gray;
+            padding-left: 35%;
+            font-size: 20px;
+        }
+        
+        .head {
+            font-size: 35px;
+            text-shadow: 3px 3px 5px gray;
+            color: black;
+            float: left;
+        }
+    </style>
+
+</head>
+
+<body style="background-image: url(/static/assets/images/emp1.jpg)">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 head">
+                <h1><b><i>EMPLOYEE MANAGEMENT</i></b></h1>
+            </div>
+            <div class="col-md-4">
+
+                <a href="/home" data-toggle="tooltip" style="float:right;color:black" title="HOME"><i
+                        class="fa fa-home fa-lg"></i></a>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 topic">
+                <h1><i>Add Employee</i></h1>
+            </div>
+            <div class="content">
+                <form class="form-horizontal" method="post" style="align-content: center">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="Code" class="form-control-label">Code</label>
+                        <input id="Code" name="Code" class="form-control"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="Name" class="form-control-label">Name</label>
+                        <input id="Name" name="Name" class="form-control"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="form-control-label">Email</label>
+                        <input id="Email" name="Email" class="form-control"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="ContactNo" class="form-control-label">Contact NO</label>
+                        <input id="ContactNo" name="ContactNo" class="form-control"></input>
+                    </div>
+                    <button type="submit" onclick="sucessmsg()" class="btn btn-md btn-success">Save</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        function sucessmsg() {
+            alert("Employee Details Added Successfully");
+        }
+    </script>
+</body>
+
+</html>
